@@ -73,30 +73,42 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap:VirtualizedContainerService.HintSize="634,637.3333333333334" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Flowchart sap:VirtualizedContainerService.HintSize="668.6666666666666,730.6666666666666" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Int32" Name="year" />
+      <Variable x:TypeArguments="x:String" Name="UserChoice">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">No</Literal>
+        </Variable.Default>
+      </Variable>
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+        <av:Point x:Key="ShapeLocation">270,2.6666666666666643</av:Point>
         <av:Size x:Key="ShapeSize">60,74.66666666666667</av:Size>
-        <av:PointCollection x:Key="ConnectorLocation">300,77.16666666666667 300,113</av:PointCollection>
+        <x:Double x:Key="Width">634.6666666666666</x:Double>
+        <av:PointCollection x:Key="ConnectorLocation">300,77.33333333333334 300,126.66666666666666</av:PointCollection>
+        <x:Double x:Key="Height">693.3333333333334</x:Double>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID3</x:Reference>
+      <x:Reference>__ReferenceID5</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID3">
+    <FlowStep x:Name="__ReferenceID0">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">200,113</av:Point>
-          <av:Size x:Key="ShapeSize">200,54</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">300,167 300,196.66666666666666</av:PointCollection>
+          <av:Point x:Key="ShapeLocation">239.99999999999997,263</av:Point>
+          <av:Size x:Key="ShapeSize">200,53.333333333333336</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">340,317 340,356.6666666666667</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog- Input year" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Enter year:" Title="Year">
+      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog- Input year" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Enter year:" Title="Year">
         <ui:InputDialog.Result>
           <OutArgument x:TypeArguments="x:Int32">
             <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">year</CSharpReference>
@@ -104,57 +116,100 @@
         </ui:InputDialog.Result>
       </ui:InputDialog>
       <FlowStep.Next>
-        <FlowDecision x:Name="__ReferenceID0" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.66666666666667,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+        <FlowDecision x:Name="__ReferenceID2" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.66666666666667,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
           <FlowDecision.Condition>
             <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">((year % 400 == 0) || ((year % 4 == 0) &amp;&amp; (year % 100 != 0)))</CSharpValue>
           </FlowDecision.Condition>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">260.6666666666667,196.66666666666666</av:Point>
+              <av:Point x:Key="ShapeLocation">300.6666666666667,356.6666666666667</av:Point>
               <av:Size x:Key="ShapeSize">78.66666666666667,86.66666666666667</av:Size>
-              <av:PointCollection x:Key="TrueConnector">260.6666666666667,240 130,240 130,303</av:PointCollection>
-              <av:PointCollection x:Key="FalseConnector">339.33333333333337,240 460,240 460,303</av:PointCollection>
+              <av:PointCollection x:Key="TrueConnector">300.6666666666667,400 201,400 201,502</av:PointCollection>
+              <av:PointCollection x:Key="FalseConnector">379.33333333333337,400 501,400 501,502</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <FlowDecision.True>
-            <FlowStep x:Name="__ReferenceID1">
+            <FlowStep x:Name="__ReferenceID3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">30,303</av:Point>
-                  <av:Size x:Key="ShapeSize">200,54</av:Size>
+                  <av:Point x:Key="ShapeLocation">101,502</av:Point>
+                  <av:Size x:Key="ShapeSize">200,53.333333333333336</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">201,556 201,630 220,630</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box- True" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="MessageBox_1">
+              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box- True" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="MessageBox_1">
                 <ui:MessageBox.Text>
                   <InArgument x:TypeArguments="x:Object">
                     <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">year + " is a leap year."</CSharpValue>
                   </InArgument>
                 </ui:MessageBox.Text>
               </ui:MessageBox>
+              <FlowStep.Next>
+                <FlowStep x:Name="__ReferenceID1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:Point x:Key="ShapeLocation">220,603</av:Point>
+                      <av:Size x:Key="ShapeSize">200,53.333333333333336</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">320,657 320,687 80,687 80,96.66666666666663 319.6666666666667,96.66666666666663 319.6666666666667,126.66666666666666</av:PointCollection>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog- Exit Program" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Do you want to exit the program?" OptionsString="Yes;No" Title="Exit">
+                    <ui:InputDialog.Result>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">UserChoice</CSharpReference>
+                      </OutArgument>
+                    </ui:InputDialog.Result>
+                  </ui:InputDialog>
+                  <FlowStep.Next>
+                    <FlowDecision x:Name="__ReferenceID5" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.66666666666667,86.66666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                      <FlowDecision.Condition>
+                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">UserChoice !="Yes"</CSharpValue>
+                      </FlowDecision.Condition>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <av:Point x:Key="ShapeLocation">260.6666666666667,126.66666666666666</av:Point>
+                          <av:Size x:Key="ShapeSize">78.66666666666667,86.66666666666667</av:Size>
+                          <av:PointCollection x:Key="TrueConnector">260.6666666666667,170 250,170 250,233 340,233 340,263</av:PointCollection>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <FlowDecision.True>
+                        <x:Reference>__ReferenceID0</x:Reference>
+                      </FlowDecision.True>
+                    </FlowDecision>
+                  </FlowStep.Next>
+                </FlowStep>
+              </FlowStep.Next>
             </FlowStep>
           </FlowDecision.True>
           <FlowDecision.False>
-            <FlowStep x:Name="__ReferenceID2">
+            <FlowStep x:Name="__ReferenceID4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">360,303</av:Point>
-                  <av:Size x:Key="ShapeSize">200,54</av:Size>
+                  <av:Point x:Key="ShapeLocation">401,502</av:Point>
+                  <av:Size x:Key="ShapeSize">200,53.333333333333336</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">501,556 501,630 420,630</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box- False" sap:VirtualizedContainerService.HintSize="200,54" sap2010:WorkflowViewState.IdRef="MessageBox_2">
+              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box- False" sap:VirtualizedContainerService.HintSize="200,53.333333333333336" sap2010:WorkflowViewState.IdRef="MessageBox_2">
                 <ui:MessageBox.Text>
                   <InArgument x:TypeArguments="x:Object">
                     <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">year + " is not a leap year."</CSharpValue>
                   </InArgument>
                 </ui:MessageBox.Text>
               </ui:MessageBox>
+              <FlowStep.Next>
+                <x:Reference>__ReferenceID1</x:Reference>
+              </FlowStep.Next>
             </FlowStep>
           </FlowDecision.False>
         </FlowDecision>
       </FlowStep.Next>
     </FlowStep>
-    <x:Reference>__ReferenceID0</x:Reference>
-    <x:Reference>__ReferenceID1</x:Reference>
     <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID3</x:Reference>
+    <x:Reference>__ReferenceID4</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
   </Flowchart>
 </Activity>

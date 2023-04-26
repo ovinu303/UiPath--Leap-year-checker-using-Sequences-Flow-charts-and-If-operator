@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="602,993.3333333333335" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="560.6666666666666,1615.3333333333333" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -75,60 +75,86 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Leap Year Checker Sequence" sap:VirtualizedContainerService.HintSize="472,928.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Leap Year Checker Sequence" sap:VirtualizedContainerService.HintSize="570.6666666666666,1550.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="year" />
+      <Variable x:TypeArguments="x:String" Name="UserChoice">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">No</Literal>
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog- Input year" sap:VirtualizedContainerService.HintSize="410,246" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Enter year:" Title="Year">
-      <ui:InputDialog.Result>
-        <OutArgument x:TypeArguments="x:Int32">
-          <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">year</CSharpReference>
-        </OutArgument>
-      </ui:InputDialog.Result>
-    </ui:InputDialog>
-    <If sap:VirtualizedContainerService.HintSize="410,532" sap2010:WorkflowViewState.IdRef="If_1">
-      <If.Condition>
-        <InArgument x:TypeArguments="x:Boolean">
-          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">((year % 400 == 0) || ((year % 4 == 0) &amp;&amp; (year % 100 != 0)))</CSharpValue>
-        </InArgument>
-      </If.Condition>
-      <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,174" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While- Check whether input is leap year until user wants to exit" sap:VirtualizedContainerService.HintSize="508.66666666666674,1440" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+      <ui:InterruptibleDoWhile.Body>
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="472,1269.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_2">
-            <ui:MessageBox.Text>
-              <InArgument x:TypeArguments="x:Object">
-                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">year + " is a leap year."</CSharpValue>
+          <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog- Input year" sap:VirtualizedContainerService.HintSize="410,246" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Enter year:" Title="Year">
+            <ui:InputDialog.Result>
+              <OutArgument x:TypeArguments="x:Int32">
+                <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">year</CSharpReference>
+              </OutArgument>
+            </ui:InputDialog.Result>
+          </ui:InputDialog>
+          <If sap:VirtualizedContainerService.HintSize="410,532" sap2010:WorkflowViewState.IdRef="If_1">
+            <If.Condition>
+              <InArgument x:TypeArguments="x:Boolean">
+                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">((year % 400 == 0) || ((year % 4 == 0) &amp;&amp; (year % 100 != 0)))</CSharpValue>
               </InArgument>
-            </ui:MessageBox.Text>
-          </ui:MessageBox>
+            </If.Condition>
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="376,174" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_2">
+                  <ui:MessageBox.Text>
+                    <InArgument x:TypeArguments="x:Object">
+                      <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">year + " is a leap year."</CSharpValue>
+                    </InArgument>
+                  </ui:MessageBox.Text>
+                </ui:MessageBox>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence sap:VirtualizedContainerService.HintSize="376,174" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box- False" sap:VirtualizedContainerService.HintSize="334,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_3">
+                  <ui:MessageBox.Text>
+                    <InArgument x:TypeArguments="x:Object">
+                      <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">year + " is not a leap year."</CSharpValue>
+                    </InArgument>
+                  </ui:MessageBox.Text>
+                </ui:MessageBox>
+              </Sequence>
+            </If.Else>
+          </If>
+          <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog- Exit Program" sap:VirtualizedContainerService.HintSize="410,300.6666666666667" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Do you want to exit the program?" OptionsString="Yes;No" Title="Exit">
+            <ui:InputDialog.Result>
+              <OutArgument x:TypeArguments="x:String">
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">UserChoice</CSharpReference>
+              </OutArgument>
+            </ui:InputDialog.Result>
+          </ui:InputDialog>
         </Sequence>
-      </If.Then>
-      <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,174" sap2010:WorkflowViewState.IdRef="Sequence_3">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box- False" sap:VirtualizedContainerService.HintSize="334,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_3">
-            <ui:MessageBox.Text>
-              <InArgument x:TypeArguments="x:Object">
-                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">year + " is not a leap year."</CSharpValue>
-              </InArgument>
-            </ui:MessageBox.Text>
-          </ui:MessageBox>
-        </Sequence>
-      </If.Else>
-    </If>
+      </ui:InterruptibleDoWhile.Body>
+      <ui:InterruptibleDoWhile.Condition>
+        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">UserChoice != "Yes"</CSharpValue>
+      </ui:InterruptibleDoWhile.Condition>
+    </ui:InterruptibleDoWhile>
   </Sequence>
 </Activity>
